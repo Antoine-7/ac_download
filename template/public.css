@@ -1,0 +1,38 @@
+#content.ac_downloads h1 + div {
+    margin-bottom: 2em;
+}
+
+#content.ac_downloads a {
+    display: block;
+    text-decoration: none;
+    margin: 0;
+    padding: 15px;
+    background: #4986b7;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#content.ac_downloads section {
+    padding: 0 10px;
+}
+
+#content.ac_downloads section:nth-child(odd) {background: #A0C6E6}
+
+#content.ac_downloads section > article, #content.ac_downloads section > aside {
+    display: table-cell;
+}
+
+#content.ac_downloads section > article {
+    width: 100%;
+}
+
+#content.ac_downloads article > p {
+    margin: 0 0.5em 0.5em 1em;
+    text-align: justify;
+    font-style: italic;
+}
+
+#content.ac_downloads section > aside {
+    text-align: center;
+    vertical-align: middle;
+}
