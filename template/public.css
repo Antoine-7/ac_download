@@ -12,27 +12,34 @@
     text-transform: uppercase;
 }
 
-#content.ac_downloads section {
+#content.ac_downloads article {
     padding: 0 10px;
 }
 
-#content.ac_downloads section:nth-child(odd) {background: #A0C6E6}
+#content.ac_downloads article:nth-child(odd) {background: #A0C6E6}
 
-#content.ac_downloads section > article, #content.ac_downloads section > aside {
+#content.ac_downloads article > header, #content.ac_downloads article > aside {
     display: table-cell;
 }
 
-#content.ac_downloads section > article {
+@media all and (max-width: 700px) {
+    #content.ac_downloads article > aside {
+        display: block;
+        padding-bottom: 0.5em;
+    }
+}
+
+#content.ac_downloads article > header {
     width: 100%;
 }
 
-#content.ac_downloads article > p {
+#content.ac_downloads header > p {
     margin: 0 0.5em 0.5em 1em;
     text-align: justify;
     font-style: italic;
 }
 
-#content.ac_downloads section > aside {
+#content.ac_downloads article > aside {
     text-align: center;
     vertical-align: middle;
 }

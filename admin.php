@@ -9,6 +9,7 @@ switch($action) {
 		if($administrator->isAuthorized()) {
 			$runPlugin->setConfigVal( 'label', trim( $_POST['label'] ) );
 			$runPlugin->setConfigVal('buttonlabel', trim($_POST['buttonlabel']));
+			$runPlugin->setConfigVal('order', trim($_POST['order']));
 			$runPlugin->setConfigVal('introduction', trim($_POST['introduction']));
 			if($pluginsManager->savePluginConfig($runPlugin)){
 				$msg = "Les modifications ont été enregistrées";

@@ -8,15 +8,15 @@ include_once(THEMES .$core->getConfigVal('theme').'/header.php');
 <!-- Liste -->
 
 <?php foreach($downloads->getItems() as $key=>$obj) { ?>
-    <section>
-        <article>
+    <article>
+        <header>
             <h2><?php echo $obj->getTitle(); ?></h2>
-            <p><?php echo htmlentities($obj->getContent()); ?>
-        </article>
+            <p><?php echo htmlentities($obj->getContent(),ENT_HTML5); ?>
+        </header>
         <aside>
             <a href="<?php echo $obj->getLink(); ?>"><?php echo $runPlugin->getConfigVal('buttonlabel'); ?></a>
         </aside>
-    </section>
+    </article>
 <?php } ?>
 
 

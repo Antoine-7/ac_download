@@ -31,7 +31,7 @@ class ac_downloadItem {
 	}
 
 	public function setContent($val){
-		$this->content = trim($val);
+		$this->content = strip_tags(trim($val));
 	}
 
 	public function setLink($val){

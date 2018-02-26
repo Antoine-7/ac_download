@@ -27,23 +27,25 @@ if($mode == 'list'){
 
 <?php } ?>
 <?php if($mode == 'edit'){ ?>
-    <form method="post" action="index.php?p=ac_downloads&action=save" enctype="multipart/form-data">
+    <form id="acd-form" method="post" action="index.php?p=ac_downloads&action=save" enctype="multipart/form-data">
 		<?php show::adminTokenField(); ?>
         <input type="hidden" name="id" value="<?php echo $item->getId(); ?>" />
 
         <p>
-            <label>Titre</label><br>
-            <input type="text" name="title" value="<?php echo $item->getTitle(); ?>" required="required" />
+            <label for="title">Titre</label><br>
+            <input type="text" id="title" name="title" value="<?php echo $item->getTitle(); ?>" required="required" />
         </p>
 
         <p>
-            <label>Lien</label><br>
-            <input type="text" name="link" value="<?php echo $item->getLink(); ?>" required="required" />
+            <label for="link">Lien</label><br>
+            <input type="text" id="link" name="link" value="<?php echo $item->getLink(); ?>" />
+            <label for="file">Ou</label><br>
+            <input type="file" id="file" name="file" />
         </p>
 
         <p>
-            <label>Contenu</label><br>
-            <textarea name="content" class="editor"><?php echo $item->getContent(); ?></textarea>
+            <label for="content">Contenu</label><br>
+            <textarea id="content" name="content" class="editor"><?php echo $item->getContent(); ?></textarea>
         </p>
 
         <p><button type="submit" class="button">Enregistrer</button></p>

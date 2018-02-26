@@ -15,6 +15,7 @@ function ac_downloadInstall(){
 ## Code relatif au plugin
 
 include PLUGINS . AC_FOLDER . 'ac_downloadItem.php';
+include PLUGINS . AC_FOLDER . 'ac_util.php';
 
 class ac_downloads {
 	private $items;
@@ -23,7 +24,8 @@ class ac_downloads {
 		$data = array();
 		if(file_exists( DATA_PLUGIN . AC_FOLDER . AC_DATA_FILE)){
 			$temp = util::readJsonFile( DATA_PLUGIN . AC_FOLDER . AC_DATA_FILE);
-			//$temp = util::sort2DimArray($temp, 'date', 'desc');
+			if(pluginsManager::getPluginConfVal('ac_downloads', 'order') == 'byName') $temp = util::sort2DimArray($temp, 'title', 'asc');
+			elseif(pluginsManager::getPluginConfVal('ac_downloads', 'order') == 'natural') $temp = util::sort2DimArray($temp, 'id', 'asc');
 			foreach($temp as $key=>$value){
 				$data[] = new ac_downloadItem($value);
 			}
@@ -58,11 +60,20 @@ class ac_downloads {
 		$id = $obj->getId();
 		if($id == ''){
 			$obj->setId(uniqid());
+			$upload = ac_util::uploadFile('file', UPLOAD . AC_FOLDER);
+			if($upload['state'] == 'success'){
+				$obj->setLink(UPLOAD . AC_FOLDER . $upload['value']);
+			}
 			$this->items[] = $obj;
 		}
 		else{
 			foreach($this->items as $key=>$value){
 				if($id == $value->getId()){
+					$upload = ac_util::uploadFile('file', UPLOAD . AC_FOLDER);
+					if($upload['state'] == 'success'){
+						if($obj->getLink() != '') unlink(getcwd() .'/' . $obj->getLink());
+						$obj->setLink(UPLOAD . AC_FOLDER . $upload['value']);
+					}
 					$this->items[$key] = $obj;
 				}
 			}
@@ -77,6 +88,7 @@ class ac_downloads {
 	public function delItem($obj){
 		foreach($this->items as $key=>$value){
 			if($obj->getId() == $value->getId()){
+				unlink(getcwd() .'/' . $this->items[$key]->getLink());
 				unset($this->items[$key]);
 			}
 		}
