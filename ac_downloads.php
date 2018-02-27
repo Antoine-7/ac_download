@@ -4,7 +4,7 @@ define('AC_FOLDER','ac_downloads/');
 define('AC_DATA_FILE','download.json');
 
 ## Fonction d'installation
-function ac_downloadInstall(){
+function ac_downloadsInstall(){
 	if(!file_exists( DATA_PLUGIN . AC_FOLDER . AC_DATA_FILE)){
 		@mkdir( UPLOAD . AC_FOLDER);
 		$data = array();

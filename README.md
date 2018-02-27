@@ -1,6 +1,6 @@
-# ac_download
+# ac_downloads
 
-AC_Download est un plug-in pour le CMS [99ko](https://github.com/j84/99ko/). Il permet de faire une page de téléchargement simplement.
+AC_Downloads est un plug-in pour le CMS [99ko](https://github.com/j84/99ko/). Il permet de faire une page de téléchargement simplement.
 
 ## Pourquoi?
 

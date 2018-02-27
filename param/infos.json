@@ -1,7 +1,7 @@
 {
-    "name" : "AC Download",
+    "name" : "AC Downloads",
     "description" : "Pour mettre à disposition des fichiers en téléchargement",
     "authorEmail" : "",
-    "authorWebsite" : "https://github.com/Antoine-7/ac_download",
+    "authorWebsite" : "https://github.com/Antoine-7/ac_downloads",
     "version" : "1.0"
 }
