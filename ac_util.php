@@ -6,13 +6,21 @@
  * Time: 10:30
  */
 
+/**
+ * Class ac_util
+ */
 class ac_util {
 
+	/**
+	 * ac_util constructor.
+	 */
 	public function __construct(){
 
 	}
 
 	/**
+	 * Upload un fichier et l'enregistre dans le bon dossier. Si l'opération est un succès retourne un tableau avec le resultat de l'opération et le nom du fichier.
+	 *
 	 * @param $baliseName
 	 * @param $dir
 	 * @param array $validations

@@ -12,8 +12,39 @@
     text-transform: uppercase;
 }
 
+#content.ac_downloads section > header {
+    background: #4986b7;
+    padding: 0.5em 10px;
+    margin-top: 1em;
+    color: white;
+}
+
+#content.ac_downloads section > header span {
+    margin-right: 0.5em;
+}
+
+#content.ac_downloads section .collapse:before {
+    /* content: "−"; */
+    content: "▲";
+}
+
+#content.ac_downloads section .expand:before {
+    /* content: "+"; */
+    content: "▼";
+}
+
+#content.ac_downloads section > header > h2 {
+    margin: 0;
+    display: inline;
+}
+
 #content.ac_downloads article {
     padding: 0 10px;
+    display: none;
+}
+
+#content.ac_downloads .one-section > article {
+    display: block;
 }
 
 #content.ac_downloads article:nth-child(odd) {background: #A0C6E6}

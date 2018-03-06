@@ -18,6 +18,7 @@
         <select id="order" name="order">
             <option <?php if($runPlugin->getConfigVal('order') == 'natural'){ ?>selected<?php } ?> value="natural">Naturel</option>
             <option <?php if($runPlugin->getConfigVal('order') == 'byName'){ ?>selected<?php } ?> value="byName">Titre</option>
+            <option <?php if($runPlugin->getConfigVal('order') == 'order'){ ?>selected<?php } ?> value="order">Trier avec un numéro d'ordre</option>
         </select>
     </p>
 
