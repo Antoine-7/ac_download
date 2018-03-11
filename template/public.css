@@ -2,6 +2,15 @@
     margin-bottom: 2em;
 }
 
+@media all and (max-width: 700px) {
+    #content.ac_downloads h1 {
+        font-size: 1.8em;
+    }
+    #content.ac_downloads h1 + div {
+        text-align: justify;
+    }
+}
+
 #content.ac_downloads a {
     display: block;
     text-decoration: none;
