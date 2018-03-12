@@ -11,7 +11,7 @@
     }
 }
 
-#content.ac_downloads a {
+#content.ac_downloads a.btn {
     display: block;
     text-decoration: none;
     margin: 0;

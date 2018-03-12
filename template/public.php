@@ -30,7 +30,7 @@ include_once(THEMES .$core->getConfigVal('theme').'/header.php');
             <p><?php echo htmlentities($obj->getContent(),ENT_HTML5); ?>
         </header>
         <aside>
-            <a href="<?php echo $obj->getLink(); ?>"><?php echo $runPlugin->getConfigVal('buttonlabel'); ?></a>
+            <a class="btn" href="<?php echo $obj->getLink(); ?>"><?php echo $runPlugin->getConfigVal('buttonlabel'); ?></a>
         </aside>
     </article>
 <?php } ?>
