@@ -9,6 +9,10 @@ Avec la version 4 du CMS, un tel plug-in n'est plus fourni. Comme de toute faço
 ## Installation
 
 Copier la structure et les fichiers dans le dossier plugin.
+Si vous utiliser la réecriture d'url, modifier la ligne : 
+RewriteRule ^([a-z]+)/$  index.php?p=$1 [L]
+par
+RewriteRule ^([a-z_]+)/$  index.php?p=$1 [L]
 
 ## Credit
 
